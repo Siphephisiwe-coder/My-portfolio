@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siphephisiwe | Virtual Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Hi, I’m <span>Siphephisiwe</span></h1>
+      <p>Your tech-savvy Virtual Assistant, here to help you work smarter.</p>
+      <a href="#contact" class="btn">Let’s Work Together</a>
+    </div>
+  </section>
+
+  <!-- Navigation -->
+<header>
+  <nav class="navbar">
+    <div class="logo">Siphephisiwe</div>
+    <ul class="nav-links">
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="about-container">
+    <div class="about-image">
+      <img src="images/profile.jpg" alt="Siphephisiwe - Virtual Assistant">
+        <div class="social-links">
+          <a href="https://github.com/Siphephisiwe-coder" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/siphephisiwe-nyathi-1045b6361" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/siphephisiwenyathi/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/siphephisiwe.nyathi.16" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m <strong>Siphephisiwe</strong> — a tech-savvy
+        <strong>Virtual Assistant</strong> with strengths in admin support,
+        email & calendar management, research, and light web/content tasks
+        (HTML, CSS, JavaScript). I help busy entrepreneurs save time and
+        stay organized so they can focus on growth.
+      </p>
+      <p>
+        I’m detail-oriented, reliable, and proactive — the kind of partner
+        who anticipates needs and communicates clearly.
+      </p>
+
+      <a href="#contact" class="btn">Let’s Work Together</a>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="projects-container">
+    <h2>My Projects</h2>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="va">Virtual Assistant</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn" data-filter="tech">Tech</button>
+    </div>
+
+    <!-- Project Grid -->
+    <div class="projects-grid">
+      <div class="project-card va">
+        <h3>Inbox Management</h3>
+        <p>Email sorting & calendar scheduling system.</p>
+        <img src="images/trello-content-board.jpg" alt="trello-content-board">
+      </div>
+      <div class="project-card va">
+        <h3>Calendar management</h3>
+        <p>Organized scheduling system for client appointments.</p>
+        <img src="images/google calendar.jpg" alt="calendar-management">
+      </div>
+      <div class="project-card design">
+        <h3>Beauty Price List</h3>
+        <p>Modern flyer design for a salon business.</p>
+        <img src="images/Beauty Salon Price list.jpg" alt="beauty-price-list">
+      </div>
+      <div class="project-card design">
+        <h3>Flyer</h3>
+        <p>Vibrant home tutor flyer</p>
+        <img src="images/home tutor flyer.jpg" alt="home-tuto-flyer">
+      </div>
+
+      <div class="project-card tech">
+        <h3>Job Application Tracker</h3>
+        <p>Web app with chatbot features for job tracking.</p>
+        <img src="images/Job application tracker.png" alt="job-application-tracker">
+        <a href="https://github.com/Siphephisiwe-coder" target="_blank" class="btn project-btn">View Project</a>
+      </div>
+      <div class="project-card tech">
+        <h3>Inspirational quote generator</h3>
+        <p>Web app that generates random inspirational quotes.</p>
+        <img src="images/insirational quotes web page.png" alt="inspirational-quote-generator">
+        <a href="https://github.com/Siphephisiwe-coder" target="_blank" class="btn project-btn">View Project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Image Popup Modal -->
+<div class="image-popup" id="popup">
+  <img src="" alt="Popup Image">
+</div>
+
+<!-- Tools Section -->
+<section id="tools">
+  <h2>Tools I Use</h2>
+  <p>Familiar with a variety of productivity and collaboration tools</p>
+  <div id="tools" class="tools-container">
+    <ul class="tools-list">
+      <li data-aos="fade-up" data-aos-delay="100">
+        <i class="fab fa-html5" style="color:#e34f26;"></i> HTML
+      </li>
+      <li data-aos="fade-up" data-aos-delay="200">
+        <i class="fab fa-css3-alt" style="color:#1572B6;"></i> CSS
+      </li>
+      <li data-aos="fade-up" data-aos-delay="300">
+        <i class="fab fa-js" style="color:#f7df1e;"></i> JavaScript
+      </li>
+      <li data-aos="fade-up" data-aos-delay="400">
+        <i class="fab fa-trello" style="color:#0079bf;"></i> Trello
+      </li>
+      <li data-aos="fade-up" data-aos-delay="500">
+        <i class="fa fa-tasks" style="color:#6c63ff;"></i> ClickUp
+      </li>
+      <li data-aos="fade-up" data-aos-delay="600">
+        <i class="fab fa-slack" style="color:#611f69;"></i> Slack
+      </li>
+      <li data-aos="fade-up" data-aos-delay="700">
+        <i class="fa fa-video" style="color:#2d8cff;"></i> Zoom
+      </li>
+      <li data-aos="fade-up" data-aos-delay="800">
+        <i class="fab fa-google-drive" style="color:#34a853;"></i> Google Drive
+      </li>
+      <li data-aos="fade-up" data-aos-delay="900">
+        <i class="fas fa-file-alt" style="color:#4285f4;"></i> Google Docs
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1000">
+        <i class="fas fa-table" style="color:#34a853;"></i> Google Sheets
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1100">
+        <i class="fas fa-calendar" style="color:#ea4335;"></i> Google Calendar
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1200">
+        <i class="fab fa-microsoft" style="color:#00a2ed;"></i> Microsoft Office
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1300">
+        <i class="fas fa-file-word" style="color:#2b579a;"></i> Word
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1400">
+        <i class="fas fa-file-excel" style="color:#217346;"></i> Excel
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1500">
+        <i class="fas fa-file-powerpoint" style="color:#d24726;"></i> PowerPoint
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1600">
+        <i class="fa fa-paint-brush" style="color:#ff6f61;"></i> Canva
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1700">
+        <i class="fa fa-envelope" style="color:#ea4335;"></i> Gmail
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1800">
+        <i class="fa fa-envelope-open" style="color:#0078d4;"></i> Outlook
+      </li>
+      <li data-aos="fade-up" data-aos-delay="1900">
+        <i class="fa fa-calendar" style="color:#006bff;"></i> Calendly
+      </li>
+</ul>
+
+    </ul>
+  </div>  
+</section> 
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <div class="services-container">
+    <h2>Services</h2>
+    <p>Here’s what I can help you with</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Tech Projects</h3>
+        <p>Web apps, trackers, and simple coding solutions for small businesses.</p>
+         <p class="service-price">From R250 / hour</p>
+         <a href="#contact" class="btn service-btn">Request Service</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-file-alt"></i>
+        <h3>Virtual Assistance – Admin</h3>
+        <p>Email management, research, data entry, scheduling, and client support.</p>
+        <p class="service-price">From R200 / hour</p>
+        <a href="#contact" class="btn service-btn">Request Service</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Virtual Assistance – Design</h3>
+        <p>Flyers, business cards, social media graphics, and Canva designs.</p>
+        <p class="service-price">From R150 / hour</p>
+        <a href="#contact" class="btn service-btn">Request Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <p>If you’d like to request a service or just say hello, reach out!</p>
+
+    <div class="contact-info">
+      <i class="fas fa-envelope"></i>
+      <button id="contact-btn"><a href="javascript:void(0)" id="showForm">Lets work together</a></button>
+    </div>
+
+    <form id="contactForm" class="contact-form" style="display: none;" action="mailto:nyathisiphephisiwe1@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+ <footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 Siphephisiwe Nyathi | All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/Siphephisiwe-coder" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/siphephisiwe-nyathi-1045b6361" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.instagram.com/siphephisiwenyathi/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/siphephisiwe.nyathi.16" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
