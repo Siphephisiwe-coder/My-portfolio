@@ -776,3 +776,150 @@ header.scrolled .nav-links a:hover {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+/* ========================= SERVICE PAGES STYLING ========================= */
+
+/* Import modern font from Google Fonts in your head tag */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* =================
+   MAIN CONTAINER
+   ================= */
+.service-detail {
+  margin: 6rem auto 2rem auto; 
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+
+/* =================
+   HEADINGS
+   ================= */
+.service-detail h2 {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.service-detail h3 {
+  font-size: 1.7rem;
+  margin-top: 3rem;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+/* =================
+   PARAGRAPHS
+   ================= */
+.service-detail p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+/* =================
+   PRICING / PACKAGES LIST
+   ================= */
+.service-detail ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+}
+
+.service-detail ul li {
+  background: linear-gradient(135deg, #f9f9ff, #e6e6ff);
+  padding: 1rem 1.2rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.service-detail ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+  background: linear-gradient(135deg, #e6e6ff, #d4d4ff);
+}
+
+/* =================
+   PROJECTS GRID
+   ================= */
+.service-detail .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-detail .projects-grid img {
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-detail .projects-grid img:hover {
+  transform: translateY(-7px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* =================
+   CTA BUTTON
+   ================= */
+.service-detail .btn.service-btn {
+  display: inline-block;
+  margin-top: 3rem; /* space after projects */
+  padding: 0.8rem 1.6rem;
+  font-size: 1.05rem;
+  background-color: #6c63ff;
+  color: #fff;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.service-detail .btn.service-btn:hover {
+  background-color: #5750d6;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* =================
+   RESPONSIVE ADJUSTMENTS
+   ================= */
+@media (max-width: 1024px) {
+  .service-detail {
+    padding: 4rem 1.5rem 2.5rem 1.5rem;
+  }
+
+  .service-detail h2 {
+    font-size: 2.2rem;
+  }
+
+  .service-detail h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-detail {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+
+  .service-detail h2 {
+    font-size: 2rem;
+  }
+
+  .service-detail h3 {
+    font-size: 1.4rem;
+  }
+}
