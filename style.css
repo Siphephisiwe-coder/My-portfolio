@@ -345,69 +345,274 @@ body {
   color: #3b5998;
 }
 
-/*--- projects section ---*/
-.projects {
-  padding: 100px 20px;
+/* ==========================
+    Projects Section
+========================== */
+.projects-section {
+  padding: 4rem 1rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: #eee;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--accent);
   color: #fff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  position: relative;
+  background: var(--text-dark);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transform: scale(0.95);
+  opacity: 0;
+  animation: fadeZoom 0.8s ease forwards;
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+}
+
+.project-info {
+  padding: 1rem;
   text-align: center;
 }
 
-.projects-container {
+.project-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 1.5rem;
+  max-width: 600px;
+  width: 100%;
+  color: #fff;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.modal-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.btn.primary {
+  background: var(--accent, #38BDF8);
+  color: #0F172A;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn.outline {
+  background: transparent;
+  border: 2px solid var(--accent, #38BDF8);
+  color: var(--accent, #38BDF8);
+}
+
+.btn.outline:hover {
+  background: var(--accent, #38BDF8);
+  color: #0F172A;
+}
+
+/* --- Tech Stack Section --- */
+.tech-stack {
+  padding: 100px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.tech-container {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.projects h2 {
+.tech-stack h2 {
   font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.tech-intro {
+  font-size: 1.1rem;
+  color: #ccc;
   margin-bottom: 40px;
 }
 
-.filter-buttons {
+.tech-filter-buttons {
   margin-bottom: 40px;
 }
 
-.filter-btn {
+.tech-filter-btn {
   padding: 10px 22px;
   margin: 0 8px;
   border: none;
   border-radius: 25px;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.15);
   color: #fff;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.filter-btn.active,
-.filter-btn:hover {
+.tech-filter-btn.active,
+.tech-filter-btn:hover {
   background: #fff;
-  color: #2575fc;
+  color: #7b2ff7;
 }
 
-.projects-grid {
+.tech-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 25px;
 }
 
-.project-card {
-  background: #fff;
-  color: #222;
-  border-radius: 12px;
+.tech-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
   padding: 20px;
-  box-shadow: 0 8px 20px rgb(136, 51, 233) ;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeInZoom 0.5s forwards;
 }
 
-.project-card:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(136, 51, 233, 0.3);
+.tech-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 12px;
 }
 
-/* --- service section --- */
+.tech-card h4 {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.tech-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 15px rgba(123, 47, 247, 0.6);
+}
+
+/* Fade In Animation */
+@keyframes fadeInZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tech-card i {
+  color: #fff;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-card:hover i {
+  transform: scale(1.2);
+  color: #7b2ff7;
+}
+
+/* --- Services Section --- */
 .services {
   padding: 100px 20px;
   color: #fff;
+  background: radial-gradient(circle at top left, rgba(123,47,247,0.1), transparent 70%), 
+              var(--bg-dark);
   text-align: center;
 }
 
@@ -419,55 +624,121 @@ body {
 .services h2 {
   font-size: 2.4rem;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 .services p {
   font-size: 1.1rem;
-  margin-bottom: 40px;
+  color: #ccc;
+  margin-bottom: 50px;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
+/* Service Cards */
 .service-card {
-  background: #fff;
-  color: #222;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
   padding: 25px 20px;
-  box-shadow: 0 8px 20px rgba(106,17,203,0.2); /* subtle purple glow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card i {
-  font-size: 2rem;
-  color: #6a11cb;
-  margin-bottom: 15px;
-}
-
-.service-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
-
-.service-card p {
-  font-size: 1rem;
-  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: left;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
 }
 
 .service-card:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 12px 30px rgb(136, 51, 233) ; /* glow on hover */
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.6);
 }
- 
- .service-price {
-  font-weight: 600;
-  color: #6a11cb; /* Matches your purple theme */
-  margin: 12px 0;
-  font-size: 1.1rem;
+
+.service-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
+
+.service-number {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #7b2ff7;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.service-desc {
+  margin: 10px 0 15px 0;
+  color: #ccc;
+}
+
+.service-pricing {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.service-card.active .service-pricing {
+  max-height: 1000px; /* large enough to show all content */
+  opacity: 1;
+}
+
+.service-pricing h4 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.service-pricing ul {
+  list-style: disc inside;
+  color: #ccc;
+  padding-left: 5px;
+}
+
+.service-pricing ul li {
+  margin-bottom: 8px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .service-header {
+    flex-direction: row;
+  }
+  .service-card {
+    padding: 20px 15px;
+  }
+}
+
+.service-arrow {
+  float: right;
+  font-size: 2rem;
+  color: #7b2ff7;
+  transition: transform 0.3s ease;
+}
+
+.service-card.active .service-arrow {
+  transform: rotate(180deg); /* Arrow flips when expanded */
+}
+
+/* Base styling for all service icons */
+.service-icon {
+  font-size: 1.8rem;
+  margin-right: 12px;
+}
+
+/* Individual colors */
+.icon-web {
+  color: #f16529; /* HTML orange */
+}
+
+.icon-uiux {
+  color: #00bcd4; /* Teal / Framer-ish blue */
+}
+
+.icon-brand {
+  color: #ff4081; /* Pink / Canva/Branding vibe */
+}
+
 
 /*--- contact section ---*/
 .contact {
@@ -516,8 +787,10 @@ body {
   padding: 12px 16px;
   margin-bottom: 20px;
   border-radius: 12px;
-  border: none;
+  border: var(--accent);
   font-size: 1rem;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
 }
 
 .contact-form input:focus,
@@ -627,170 +900,6 @@ body {
 }
 
 /* --- tools section --- */
-#tools h2{
-  font-size: 2.4rem;
-  margin-bottom: 10px;
-  color: #fff;
-  text-align: center;
-}
-
-#tools p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #ddd;
-  text-align: center;
-}
-
-.tools-container {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 6px 18px rgb(112, 20, 211);
-  max-width: 1000px;
-  max-height: max-content;
-  margin: 40px auto 40px auto; /* top/bottom spacing */
-  padding: 40px 30px;
-}
-
-.tools-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  padding: 0;
-}
-
-.tools-list li {
-  list-style: none;
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: unset;
-  min-height: 50px;
-  height: 50px;
-  text-align: center;
-  box-sizing: border-box;
-    
-}
-
-/* Hover lift effect */
-.tools-list li:hover{
-  transform: translateY(-5px);
-}
-
-/* Icons: keep your original color + spacing */
-.tools-list i {
-  color: #0d47a1;
-  margin-right: 8px;
-  font-size: 1.2em;
-}
-
- .tools-list {
-    gap: 15px; /* tighter gap on small screens */
-  }
-
-  .tools-list li {
-    flex: 1 1 45%; /* show 2 per row on small screens */
-  }
-
-  /* Brand colors */
-.tools-list li:nth-child(1) { border-color: #e34c26; } /* HTML */
-.tools-list li:nth-child(1):hover { background: #e34c26; color: #fff; }
-.tools-list li:nth-child(1):hover i { transform: scale(1.2); }
-
-.tools-list li:nth-child(2) { border-color: #264de4; } /* CSS */
-.tools-list li:nth-child(2):hover { background: #264de4; color: #fff; }
-.tools-list li:nth-child(2):hover i { transform: scale(1.2); }
-
-.tools-list li:nth-child(3) { border-color: #f0db4f; } /* JS */
-.tools-list li:nth-child(3):hover { background: #f0db4f; color: #000; }
-
-.tools-list li:nth-child(4) { border-color: #0079bf; } /* Trello */
-.tools-list li:nth-child(4):hover { background: #0079bf; color: #fff; }
-
-.tools-list li:nth-child(5) { border-color: #7b68ee; } /* ClickUp */
-.tools-list li:nth-child(5):hover { background: #7b68ee; color: #fff; }
-
-.tools-list li:nth-child(6) { border-color: #4a154b; } /* Slack */
-.tools-list li:nth-child(6):hover { background: #4a154b; color: #fff; }
-
-.tools-list li:nth-child(7) { border-color: #2d8cff; } /* Zoom */
-.tools-list li:nth-child(7):hover { background: #2d8cff; color: #fff; }
-
-.tools-list li:nth-child(8) { border-color: #34a853; } /* Google Drive */
-.tools-list li:nth-child(8):hover { background: #34a853; color: #fff; }
-
-.tools-list li:nth-child(9) { border-color: #4285f4; } /* Google Docs */
-.tools-list li:nth-child(9):hover { background: #4285f4; color: #fff; }
-
-.tools-list li:nth-child(10) { border-color: #34a853; } /* Google Sheets */
-.tools-list li:nth-child(10):hover { background: #34a853; color: #fff; }
-
-.tools-list li:nth-child(11) { border-color: #ea4335; } /* Google Calendar */
-.tools-list li:nth-child(11):hover { background: #ea4335; color: #fff; }
-
-.tools-list li:nth-child(12) { border-color: #d83b01; } /* Microsoft Office */
-.tools-list li:nth-child(12):hover { background: #d83b01; color: #fff; }
-
-.tools-list li:nth-child(13) { border-color: #2b579a; } /* Word */
-.tools-list li:nth-child(13):hover { background: #2b579a; color: #fff; }
-
-.tools-list li:nth-child(14) { border-color: #217346; } /* Excel */
-.tools-list li:nth-child(14):hover { background: #217346; color: #fff; }
-
-.tools-list li:nth-child(15) { border-color: #b7472a; } /* PowerPoint */
-.tools-list li:nth-child(15):hover { background: #b7472a; color: #fff; }
-
-.tools-list li:nth-child(16) { border-color: #00c4cc; } /* Canva */
-.tools-list li:nth-child(16):hover { background: #00c4cc; color: #fff; }
-
-.tools-list li:nth-child(17) { border-color: #ea4335; } /* Gmail */
-.tools-list li:nth-child(17):hover { background: #ea4335; color: #fff; }
-
-.tools-list li:nth-child(18) { border-color: #0072c6; } /* Outlook */
-.tools-list li:nth-child(18):hover { background: #0072c6; color: #fff; }
-
-.tools-list li:nth-child(19) { border-color: #00a2ff; } /* Calendly */
-.tools-list li:nth-child(19):hover { background: #00a2ff; color: #fff; }
-
-/* Popup modal background */
-.image-popup {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-/* Popup image */
-.image-popup img {
-  max-width: 90%;
-  max-height: 80%;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-  animation: zoomIn 0.3s ease;
-}
-
-/* Zoom animation */
-@keyframes zoomIn {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-/* ========================= SERVICE PAGES STYLING ========================= */
-
-/* Import modern font from Google Fonts in your head tag */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* =================
    MAIN CONTAINER

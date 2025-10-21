@@ -17,30 +17,110 @@ window.addEventListener('scroll', () => {
 });
 
 // projects filtering
-document.addEventListener("DOMContentLoaded", () => {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
+// === FILTER FUNCTIONALITY ===
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
 
-  filterButtons.forEach(btn => {
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const filter = btn.getAttribute('data-filter');
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.classList.contains(filter)) {
+        card.style.display = 'block';
+        setTimeout(() => card.style.opacity = '1', 100);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// === MODAL FUNCTIONALITY ===
+const modal = document.getElementById('project-modal');
+const modalClose = document.querySelector('.modal-close');
+const modalTitle = document.querySelector('.modal-title');
+const modalProblem = document.querySelector('.modal-problem');
+const modalSolution = document.querySelector('.modal-solution');
+const modalTech = document.querySelector('.modal-tech');
+const modalRole = document.querySelector('.modal-role');
+const modalImg = document.querySelector('.modal-img');
+
+document.querySelectorAll('.project-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const card = btn.closest('.project-card');
+
+    modalTitle.textContent = card.dataset.title;
+    modalProblem.textContent = card.dataset.problem;
+    modalSolution.textContent = card.dataset.solution;
+    modalTech.textContent = card.dataset.tech;
+    modalRole.textContent = card.dataset.role;
+    modalImg.src = card.dataset.img;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+});
+
+modal.addEventListener('click', e => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && modal.classList.contains('active')) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+
+// --- Tech Stack Filter ---
+document.addEventListener("DOMContentLoaded", () => {
+  const techFilterButtons = document.querySelectorAll(".tech-filter-btn");
+  const techCards = document.querySelectorAll(".tech-card");
+
+  techFilterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      // Remove active class from all buttons
-      filterButtons.forEach(b => b.classList.remove("active"));
+      // Remove active state from all buttons
+      techFilterButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
 
       const filter = btn.getAttribute("data-filter");
 
-      projectCards.forEach(card => {
+      techCards.forEach(card => {
         if (filter === "all" || card.classList.contains(filter)) {
           card.style.display = "block";
           card.style.opacity = "1";
+          card.style.transform = "scale(1)";
         } else {
           card.style.display = "none";
           card.style.opacity = "0";
+          card.style.transform = "scale(0.95)";
         }
       });
     });
   });
 });
+
+// Expand/collapse service pricing
+const serviceCards = document.querySelectorAll('.service-card');
+
+serviceCards.forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('active');
+  });
+});
+
 
 // contact form submission
 document.addEventListener("DOMContentLoaded", function() {
