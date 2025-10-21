@@ -17,7 +17,7 @@ window.addEventListener('scroll', () => {
 });
 
 // projects filtering
-// === FILTER FUNCTIONALITY ===
+  // Filtering
 const filterBtns = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
@@ -30,7 +30,7 @@ filterBtns.forEach(btn => {
     projectCards.forEach(card => {
       if (filter === 'all' || card.classList.contains(filter)) {
         card.style.display = 'block';
-        setTimeout(() => card.style.opacity = '1', 100);
+        setTimeout(() => card.style.opacity = '1', 50);
       } else {
         card.style.display = 'none';
       }
@@ -38,7 +38,7 @@ filterBtns.forEach(btn => {
   });
 });
 
-// === MODAL FUNCTIONALITY ===
+// Modal
 const modal = document.getElementById('project-modal');
 const modalClose = document.querySelector('.modal-close');
 const modalTitle = document.querySelector('.modal-title');
@@ -47,6 +47,8 @@ const modalSolution = document.querySelector('.modal-solution');
 const modalTech = document.querySelector('.modal-tech');
 const modalRole = document.querySelector('.modal-role');
 const modalImg = document.querySelector('.modal-img');
+const modalDemo = document.querySelector('.modal-demo');
+const modalCode = document.querySelector('.modal-code');
 
 document.querySelectorAll('.project-btn').forEach(btn => {
   btn.addEventListener('click', e => {
@@ -58,7 +60,21 @@ document.querySelectorAll('.project-btn').forEach(btn => {
     modalSolution.textContent = card.dataset.solution;
     modalTech.textContent = card.dataset.tech;
     modalRole.textContent = card.dataset.role;
-    modalImg.src = card.dataset.img;
+
+    // Determine which buttons to show
+    if (card.classList.contains('tech')) {
+      modalImg.src = card.style.backgroundImage.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+      modalDemo.href = card.dataset.live;
+      modalCode.href = card.dataset.github;
+      modalDemo.style.display = 'inline-block';
+      modalCode.style.display = 'inline-block';
+    } else {
+      // design project
+      const images = JSON.parse(card.dataset.images);
+      modalImg.src = images[0]; // show first image, could add slider later
+      modalDemo.style.display = 'none';
+      modalCode.style.display = 'none';
+    }
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -83,6 +99,7 @@ document.addEventListener('keydown', e => {
     document.body.style.overflow = '';
   }
 });
+
 
 // --- Tech Stack Filter ---
 document.addEventListener("DOMContentLoaded", () => {
