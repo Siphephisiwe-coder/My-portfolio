@@ -90,6 +90,45 @@ body {
 }
 
 /* ==========================
+   Responsive Navbar Fix
+========================== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px; /* just below navbar */
+    right: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    display: none; /* hide by default */
+  }
+
+  .nav-links.active {
+    display: flex; /* show when active */
+  }
+
+  .burger {
+    display: block;
+    z-index: 1100;
+  }
+
+  /* Optional burger animation */
+  .burger.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .burger.toggle div:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+
+/* ==========================
    Hero Section
 ========================== */
 .hero {
@@ -354,9 +393,8 @@ body {
 }
 
 .container p{
-  text-align: center;
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Filter Buttons Container */
@@ -494,6 +532,81 @@ body {
 
 .btn.primary { background: var(--accent,#7b2ff7); color: #0f172a; }
 .btn.outline { background: transparent; border: 2px solid var(--accent,#7b2ff7); color: var(--accent,#7b2ff7);}
+
+/* ==========================
+   Responsive (Mobile) Styles
+========================== */
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  /* Filter buttons stack neatly */
+  .filter-buttons {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Project grid fits smaller cards */
+  .projects-grid {
+    grid-template-columns: 1fr; /* single column layout */
+    gap: 1rem;
+  }
+
+  .project-card {
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .project-card .overlay {
+    padding: 0.8rem;
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+  }
+
+  .project-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  /* Modal adjustments */
+  .glass-box {
+    max-width: 95%;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .modal-img {
+    max-height: 250px;
+  }
+
+  .modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn.primary,
+  .btn.outline {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 
 /* --- Tech Stack Section --- */

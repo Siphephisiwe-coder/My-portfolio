@@ -5,6 +5,7 @@ const header = document.querySelector('header');
 // Toggle mobile menu
 burger.addEventListener('click', () => {
   nav.classList.toggle('active');
+  burger.classList.toggle('toggle'); // animate burger
 });
 
 // Change navbar style on scroll
