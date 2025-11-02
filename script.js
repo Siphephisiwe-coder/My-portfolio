@@ -43,10 +43,8 @@ filterBtns.forEach(btn => {
 const modal = document.getElementById('project-modal');
 const modalClose = document.querySelector('.modal-close');
 const modalTitle = document.querySelector('.modal-title');
-const modalProblem = document.querySelector('.modal-problem');
-const modalSolution = document.querySelector('.modal-solution');
+const modalDescription = document.querySelector('.modal-description');
 const modalTech = document.querySelector('.modal-tech');
-const modalRole = document.querySelector('.modal-role');
 const modalImg = document.querySelector('.modal-img');
 const modalDemo = document.querySelector('.modal-demo');
 const modalCode = document.querySelector('.modal-code');
@@ -57,10 +55,8 @@ document.querySelectorAll('.project-btn').forEach(btn => {
     const card = btn.closest('.project-card');
 
     modalTitle.textContent = card.dataset.title;
-    modalProblem.textContent = card.dataset.problem;
-    modalSolution.textContent = card.dataset.solution;
+    modalDescription.textContent = card.dataset.solution;
     modalTech.textContent = card.dataset.tech;
-    modalRole.textContent = card.dataset.role;
 
     // Determine which buttons to show
     if (card.classList.contains('tech')) {
