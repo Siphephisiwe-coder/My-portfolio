@@ -8,6 +8,22 @@ burger.addEventListener('click', () => {
   burger.classList.toggle('toggle'); // animate burger
 });
 
+// Close mobile menu when clicking a nav link
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('active');
+    burger.classList.remove('toggle');
+  });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!nav.contains(e.target) && !burger.contains(e.target) && nav.classList.contains('active')) {
+    nav.classList.remove('active');
+    burger.classList.remove('toggle');
+  }
+});
+
 // Change navbar style on scroll
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {

@@ -86,7 +86,20 @@ body {
   height: 3px;
   background: var(--text-light);
   margin: 5px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+}
+
+/* Burger Animation */
+.burger.toggle div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger.toggle div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.toggle div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* ==========================
@@ -169,14 +182,46 @@ body {
    Responsive
 ========================== */
 @media (max-width: 768px) {
+  /* Mobile: make nav a right-side panel instead of full-screen */
   .nav-links {
-    display: none;
+    position: fixed;
+    right: -360px;                 /* hidden off-screen */
+    top: 70px;
+    flex-direction: column;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(6px);
+  width: min(320px, 85vw);      /* panel width (caps on very small screens) */
+  height: calc(100% - 90px);
+    border-radius: 12px 0 0 12px; /* rounded left edge */
+    text-align: left;
+    transition: right 0.28s ease;
+    padding: 18px 20px;
+    gap: 8px;
+    box-shadow: -8px 12px 30px rgba(2,6,23,0.5);
+    z-index: 1200;
+  }
+
+  /* When active slide in but keep some margin from edge */
+  .nav-links.active {
+    right: 12px;
+  }
+
+  .nav-links li {
+    padding: 12px 8px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    display: block;
+    padding: 8px 6px;
+    color: var(--text-light);
   }
 
   .burger {
     display: block;
   }
 
+  /* Reduce hero text size on small screens */
   .hero-content h1 {
     font-size: 2.2rem;
   }
