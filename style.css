@@ -182,42 +182,43 @@ body {
    Responsive
 ========================== */
 @media (max-width: 768px) {
-  /* Mobile: make nav a right-side panel instead of full-screen */
   .nav-links {
     position: fixed;
-    right: -360px;                 /* hidden off-screen */
     top: 70px;
+    left: 0;
+    right: 0;
     flex-direction: column;
     background: rgba(15, 23, 42, 0.98);
-    backdrop-filter: blur(6px);
-  width: min(320px, 85vw);      /* panel width (caps on very small screens) */
-  height: calc(100% - 90px);
-    border-radius: 12px 0 0 12px; /* rounded left edge */
-    text-align: left;
-    transition: right 0.28s ease;
-    padding: 18px 20px;
-    gap: 8px;
-    box-shadow: -8px 12px 30px rgba(2,6,23,0.5);
-    z-index: 1200;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: calc(100vh - 70px);
+    text-align: center;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out;
+    padding: 2rem 0;
+    gap: 2rem;
+    z-index: 1000;
   }
 
-  /* When active slide in but keep some margin from edge */
   .nav-links.active {
-    right: 12px;
+    transform: translateY(0);
   }
 
   .nav-links li {
-    padding: 12px 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .nav-links.active li {
+    opacity: 1;
   }
 
   .nav-links a {
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: block;
-    padding: 8px 6px;
+    padding: 1rem;
     color: var(--text-light);
-  }
-
-  .burger {
+  }  .burger {
     display: block;
   }
 
