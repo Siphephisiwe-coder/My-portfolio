@@ -151,19 +151,143 @@ serviceCards.forEach(card => {
   });
 });
 
-
-// contact form submission
-document.addEventListener("DOMContentLoaded", function() {
-  const showFormLink = document.getElementById('showForm');
-  const contactForm = document.getElementById('contactForm');
-
-  showFormLink.addEventListener('click', function(e) {
-    e.preventDefault(); // prevent scrolling to top
-    if (contactForm.style.display === "none" || contactForm.style.display === "") {
-      contactForm.style.display = "block";
-      contactForm.scrollIntoView({ behavior: "smooth" });
-    } else {
-      contactForm.style.display = "none";
+// contact section
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // e.g. "abc123XYZ"
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // e.g. "service_xxxxxx"
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // e.g. "template_xxxxxx"
+ 
+// ---- validation helpers ----
+ 
+function showError(inputEl, errorEl, message) {
+  inputEl.classList.add('invalid');
+  errorEl.textContent = message;
+}
+ 
+function clearError(inputEl, errorEl) {
+  inputEl.classList.remove('invalid');
+  errorEl.textContent = '';
+}
+ 
+function validateForm(fields) {
+  let valid = true;
+ 
+  const { nameEl, emailEl, subjectEl, messageEl } = fields;
+  const nameError    = document.getElementById('name-error');
+  const emailError   = document.getElementById('email-error');
+  const subjectError = document.getElementById('subject-error');
+  const messageError = document.getElementById('message-error');
+ 
+  // Name
+  if (!nameEl.value.trim()) {
+    showError(nameEl, nameError, 'Please enter your name.');
+    valid = false;
+  } else {
+    clearError(nameEl, nameError);
+  }
+ 
+  // Email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailEl.value.trim()) {
+    showError(emailEl, emailError, 'Please enter your email.');
+    valid = false;
+  } else if (!emailRegex.test(emailEl.value.trim())) {
+    showError(emailEl, emailError, 'Please enter a valid email address.');
+    valid = false;
+  } else {
+    clearError(emailEl, emailError);
+  }
+ 
+  // Subject
+  if (!subjectEl.value.trim()) {
+    showError(subjectEl, subjectError, 'Please enter a subject.');
+    valid = false;
+  } else {
+    clearError(subjectEl, subjectError);
+  }
+ 
+  // Message
+  if (!messageEl.value.trim().length < 10) {
+    showError(messageEl, messageError, 'Message is too short.');
+    valid = false;
+  } else if (!messageEl.value.trim()) {
+    showError(messageEl, messageError, 'Please write a message.');
+    valid = false;
+  } else {
+    clearError(messageEl, messageError);
+  }
+ 
+  return valid;
+}
+ 
+// ---- main init ----
+ 
+document.addEventListener('DOMContentLoaded', function () {
+ 
+  // Initialise EmailJS
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+  } else {
+    console.warn('EmailJS not loaded. Add the SDK to your <head>:\n<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"><\/script>');
+  }
+ 
+  const form       = document.getElementById('contactForm');
+  const submitBtn  = document.getElementById('submitBtn');
+  const btnText    = submitBtn.querySelector('.btn-text');
+  const btnIcon    = submitBtn.querySelector('.btn-icon');
+  const btnLoading = submitBtn.querySelector('.btn-loading');
+  const successMsg = document.getElementById('formSuccess');
+  const errorMsg   = document.getElementById('formError');
+ 
+  const nameEl    = document.getElementById('contact-name');
+  const emailEl   = document.getElementById('contact-email');
+  const subjectEl = document.getElementById('contact-subject');
+  const messageEl = document.getElementById('contact-message');
+ 
+  // Clear errors on input
+  [nameEl, emailEl, subjectEl, messageEl].forEach(el => {
+    el.addEventListener('input', () => {
+      el.classList.remove('invalid');
+      const errId = el.id.replace('contact-', '') + '-error';
+      const errEl = document.getElementById(errId);
+      if (errEl) errEl.textContent = '';
+    });
+  });
+ 
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+ 
+    successMsg.style.display = 'none';
+    errorMsg.style.display   = 'none';
+ 
+    const fields = { nameEl, emailEl, subjectEl, messageEl };
+    if (!validateForm(fields)) return;
+ 
+    // Loading state
+    btnText.style.display    = 'none';
+    btnIcon.style.display    = 'none';
+    btnLoading.style.display = 'inline-flex';
+    submitBtn.disabled       = true;
+ 
+    const templateParams = {
+      from_name:  nameEl.value.trim(),
+      from_email: emailEl.value.trim(),
+      subject:    subjectEl.value.trim(),
+      message:    messageEl.value.trim(),
+    };
+ 
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      form.reset();
+      successMsg.style.display = 'flex';
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      errorMsg.style.display = 'flex';
+    } finally {
+      btnText.style.display    = 'inline';
+      btnIcon.style.display    = 'inline';
+      btnLoading.style.display = 'none';
+      submitBtn.disabled       = false;
     }
   });
 });
