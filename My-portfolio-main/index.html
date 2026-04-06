@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Siphephisiwe – Frontend Developer & UI/UX Designer in South Africa. I build responsive websites, web apps, and intuitive user experiences that help businesses engage users effectively.">
+  <meta property="og:title" content="Siphephisiwe – Frontend Developer & UI/UX Designer">
+  <meta property="og:description" content="I build responsive websites and intuitive user interfaces for businesses.">
+  <meta property="og:image" content="images/profile.jpg">
+  <meta property="og:url" content="https://siphephisiwe-portfolio.netlify.app/">
+  <title>Siphephisiwe – Frontend Developer & UI/UX Designer | Web & App Solutions, South Africa</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient grain overlay -->
+  <div class="grain"></div>
+
+  <!-- Header / Navigation -->
+  <header id="header">
+    <nav class="navbar">
+      <div class="logo">SN<span class="logo-dot">.</span></div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tech">Stack</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-sun icon-sun"></i>
+          <i class="fas fa-moon icon-moon"></i>
+        </button>
+        <div class="burger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-lines"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Frontend Developer & UI/UX Designer</p>
+      <h1>Siphephisiwe<br><span class="hero-sub">Nyathi</span></h1>
+      <p class="hero-desc">Crafting refined digital experiences that merge elegant design with clean, purposeful code.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">View My Work</a>
+        <a href="#contact" class="btn outline">Let's Collaborate</a>
+      </div>
+      <div class="hero-scroll">
+        <span></span>
+        <p>Scroll</p>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-ring">
+        <svg viewBox="0 0 120 120" class="badge-text-svg">
+          <path id="circlePath" d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none"/>
+          <text font-size="10.5" fill="currentColor" letter-spacing="3">
+            <textPath href="#circlePath">AVAILABLE FOR WORK • SOUTH AFRICA •</textPath>
+          </text>
+        </svg>
+        <div class="badge-center-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-container">
+      <div class="about-left">
+        <div class="about-img-wrap">
+          <img src="images/profile.jpg" alt="Siphephisiwe Nyathi - Frontend Developer">
+          <div class="img-accent"></div>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/Siphephisiwe-coder" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/siphephisiwe-nyathi-1045b6361" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/artisanwebwork/?hl=en" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61583118917343" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <span class="section-label">About Me</span>
+        <h2 class="section-heading">Developer.<br>Designer.<br><em>Problem solver.</em></h2>
+        <p class="about-body">
+          I'm a self-taught Frontend Developer and UI/UX Designer with a passion for crafting clean, responsive digital experiences. From hand-coded websites to polished user interfaces, I turn complex problems into elegant, functional solutions.
+        </p>
+        <p class="about-body">
+          My journey started with curiosity and a screen. Trained through FNB App Academy and driven by relentless self-study, I've built everything from business platforms to hackathon projects — and I'm just getting started.
+        </p>
+
+        <a href="#contact" class="btn primary" style="margin-top:1.5rem;">Let's Work Together</a>
+
+        <!-- Education Timeline -->
+        <div class="education-block">
+          <h3 class="edu-heading">Education</h3>
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2025 — Present</span>
+                <h4>BSc Applied Physics</h4>
+                <p>Incoming student — commencing April 2025. Bridging computational thinking with physical science.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">2024</span>
+                <h4>FNB App Academy</h4>
+                <p>Intensive industry training in web development, UI/UX principles, and modern frontend practices.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">Ongoing</span>
+                <h4>Self-Taught Development</h4>
+                <p>HTML, CSS, JavaScript, Figma, and beyond — built through projects, documentation, and relentless practice.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-heading">Projects</h2>
+      <p class="section-sub">A curated selection of web development and UI/UX design work.</p>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="tech">Development</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- SkillFund -->
+        <div class="project-card tech featured"
+             style="background-image: url('images/skillfund.png');"
+             data-title="SkillFund"
+             data-solution="A student-focused app where learners can monetise their skills to fund their own tuition. SkillFund connects talented students with clients who need services — turning ability into opportunity."
+             data-tech="HTML, CSS, JavaScript"
+             data-live="https://skillfund.netlify.app/"
+             data-github="#">
+          <div class="card-badge">In Progress</div>
+          <div class="overlay">
+            <h3>SkillFund</h3>
+            <p class="card-sub">Student skill monetisation platform</p>
+            <button class="project-btn">View Demo</button>
+          </div>
+        </div>
+
+        <!-- MSSkins -->
+        <div class="project-card tech"
+             style="background-image: url('images/msskins.png');"
+             data-title="MSSkins"
+             data-solution="A premium five-page skincare website featuring a full product showcase, blog, WhatsApp-integrated contact form, and smooth UX tailored for the beauty and wellness market."
+             data-tech="HTML, CSS, JavaScript"
+             data-live="https://msskins.netlify.app/"
+             data-github="#">
+          <div class="card-badge">In Progress</div>
+          <div class="overlay">
+            <h3>MSSkins</h3>
+            <p class="card-sub">Skincare brand website</p>
+            <button class="project-btn">View Project</button>
+          </div>
+        </div>
+
+        <!-- Job Application Tracker -->
+        <div class="project-card tech"
+             style="background-image: url('images/Job application tracker.png');"
+             data-title="Job Application Tracker"
+             data-solution="A web application that helps users organise and track their job applications with features for managing job titles, application statuses, and important deadlines."
+             data-tech="HTML, CSS, JavaScript"
+             data-live="https://sphejobapplicationtracker.netlify.app/"
+             data-github="https://github.com/Siphephisiwe-coder/Job-application-tracker">
+          <div class="overlay">
+            <h3>Job Application Tracker</h3>
+            <p class="card-sub">Productivity web app</p>
+            <button class="project-btn">View Project</button>
+          </div>
+        </div>
+
+        <!-- Tax Consulting -->
+        <div class="project-card tech"
+             style="background-image: url('images/taxoneacc.png');"
+             data-title="Tax-Consulting Demo Website"
+             data-solution="A modern, responsive website for a tax consulting business featuring a clean design, service information, and contact forms."
+             data-tech="HTML, CSS, JavaScript"
+             data-live="https://taxoneacc.netlify.app/"
+             data-github="https://github.com/Siphephisiwe-coder/tax-one-account-website">
+          <div class="overlay">
+            <h3>TaxOneAcc Website</h3>
+            <p class="card-sub">Business website</p>
+            <button class="project-btn">View Project</button>
+          </div>
+        </div>
+
+        <!-- EcoRise -->
+        <div class="project-card tech"
+             style="background-image: url('images/EcoRise.png');"
+             data-title="EcoRise"
+             data-solution="A modern, responsive website/App for entrepreneurs and small business owners to register and access resources for sustainable business practices."
+             data-tech="HTML, CSS, JavaScript"
+             data-live="https://ecorise-hackathon.netlify.app/signup.html"
+             data-github="https://github.com/Siphephisiwe-coder/tax-one-account-website">
+          <div class="overlay">
+            <h3>EcoRise</h3>
+            <p class="card-sub">Hackathon project</p>
+            <button class="project-btn">View Project</button>
+          </div>
+        </div>
+
+        <!-- T-Fix Media -->
+        <div class="project-card tech"
+             style="background-image: url('images/T-Fixmedia.png');"
+             data-title="T-Fix Media"
+             data-solution="A modern, responsive website for a tech company that showcases their services and portfolio."
+             data-tech="HTML, CSS, JavaScript"
+             data-live="https://t-fixmedia.netlify.app/"
+             data-github="https://github.com/Siphephisiwe-coder/T-Fix-Media">
+          <div class="overlay">
+            <h3>T-Fix Media</h3>
+            <p class="card-sub">Tech company site</p>
+            <button class="project-btn">View Project</button>
+          </div>
+        </div>
+
+        <!-- TaxOneAcc Flyers -->
+        <div class="project-card design"
+             style="background-image: url('images/taconeacc-flyer1.png');"
+             data-title="TaxOneAcc Flyers"
+             data-solution="Professional marketing flyers designed with brand consistency and clear communication of services."
+             data-tech="Canva, Adobe Photoshop"
+             data-images='["images/taconeacc-flyer1.png","images/taconeacc-flyer2.png"]'>
+          <div class="overlay">
+            <h3>TaxOneAcc Flyers</h3>
+            <p class="card-sub">Print design</p>
+            <button class="project-btn">View Project</button>
+          </div>
+        </div>
+
+        <!-- Business Card -->
+        <div class="project-card design"
+             style="background-image: url('images/businesscard.png');"
+             data-title="TaxOneAcc Business Card"
+             data-solution="Elegant and minimal business card design that reflects the professional nature of the tax consulting business."
+             data-tech="Canva, Adobe Photoshop"
+             data-images='["images/businesscard.png"]'>
+          <div class="overlay">
+            <h3>TaxOneAcc Business Card</h3>
+            <p class="card-sub">Brand design</p>
+            <button class="project-btn">View Project</button>
+          </div>
+        </div>
+
+        <!-- Beauty Price List -->
+        <div class="project-card design"
+             style="background-image: url('images/Beauty Salon Price list.jpg');"
+             data-title="Beauty Price List"
+             data-solution="Clean and visually appealing price list design for a beauty salon that enhances their brand image."
+             data-tech="Canva"
+             data-images='["images/Beauty Salon Price list.jpg"]'>
+          <div class="overlay">
+            <h3>Beauty Price List</h3>
+            <p class="card-sub">Brand design</p>
+            <button class="project-btn">View Project</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="project-modal" class="modal">
+      <div class="modal-content glass-box">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div class="modal-img-container">
+          <img src="" alt="Project Preview" class="modal-img">
+        </div>
+        <h3 class="modal-title"></h3>
+        <p class="modal-description"></p>
+        <p class="modal-tech-line"><span class="modal-tech-label">Stack</span> <span class="modal-tech"></span></p>
+        <div class="modal-buttons">
+          <a href="#" target="_blank" rel="noopener" class="btn primary modal-demo">View Live</a>
+          <a href="#" target="_blank" rel="noopener" class="btn outline modal-code">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="tech-stack" id="tech">
+    <div class="tech-container">
+      <span class="section-label">Capabilities</span>
+      <h2 class="section-heading">Tech Stack</h2>
+      <p class="section-sub">My go-to technologies for building modern web experiences.</p>
+
+      <div class="tech-filter-buttons">
+        <button class="tech-filter-btn active" data-filter="all">All</button>
+        <button class="tech-filter-btn" data-filter="frontend">Frontend</button>
+        <button class="tech-filter-btn" data-filter="uiux">UI/UX</button>
+        <button class="tech-filter-btn" data-filter="tools">Tools</button>
+        <button class="tech-filter-btn" data-filter="learning">Learning</button>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card frontend"><i class="fab fa-html5" style="color:#E34F26;"></i><h4>HTML5</h4></div>
+        <div class="tech-card frontend"><i class="fab fa-css3-alt" style="color:#264DE4;"></i><h4>CSS3</h4></div>
+        <div class="tech-card frontend"><i class="fab fa-js" style="color:#F0DB4F;"></i><h4>JavaScript</h4></div>
+        <div class="tech-card uiux"><i class="fab fa-figma" style="color:#F24E1E;"></i><h4>Figma</h4></div>
+        <div class="tech-card uiux"><i class="fab fa-wordpress" style="color:#21759B;"></i><h4>WordPress</h4></div>
+        <div class="tech-card uiux"><i class="fas fa-paint-brush" style="color:#9B59B6;"></i><h4>Canva</h4></div>
+        <div class="tech-card uiux"><i class="fas fa-layer-group" style="color:#0C6AA7;"></i><h4>Framer</h4></div>
+        <div class="tech-card uiux"><i class="fas fa-globe" style="color:#146EF5;"></i><h4>Webflow</h4></div>
+        <div class="tech-card uiux"><i class="fas fa-file-powerpoint" style="color:#D83B01;"></i><h4>PowerPoint</h4></div>
+        <div class="tech-card tools"><i class="fas fa-code" style="color:#007ACC;"></i><h4>VS Code</h4></div>
+        <div class="tech-card tools"><i class="fab fa-git-alt" style="color:#F1502F;"></i><h4>Git</h4></div>
+        <div class="tech-card tools"><i class="fab fa-github" style="color:#ccc;"></i><h4>GitHub</h4></div>
+        <div class="tech-card learning"><i class="fab fa-react" style="color:#61DAFB;"></i><h4>React</h4></div>
+        <div class="tech-card learning"><i class="fas fa-water" style="color:#06B6D4;"></i><h4>Tailwind</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="services-container">
+      <span class="section-label">What I Offer</span>
+      <h2 class="section-heading">Services</h2>
+      <p class="section-sub">Premium solutions tailored to your business needs.</p>
+
+      <div class="service-card" data-service="web">
+        <div class="service-header">
+          <div class="service-num-wrap">
+            <span class="service-number">01</span>
+          </div>
+          <div class="service-title-wrap">
+            <i class="fas fa-code service-icon"></i>
+            <h3>Custom Websites</h3>
+          </div>
+          <span class="service-arrow"><i class="fas fa-plus"></i></span>
+        </div>
+        <p class="service-desc">Hand-coded or CMS-based websites that look great and work flawlessly on all devices.</p>
+        <div class="service-pricing">
+          <div class="pricing-grid">
+            <div class="price-tier">
+              <h5>Landing Page</h5>
+              <span class="price">R2,500 – R4,000</span>
+              <p>Single page, contact form, mobile-optimised</p>
+            </div>
+            <div class="price-tier">
+              <h5>Business Website</h5>
+              <span class="price">R5,000 – R8,000</span>
+              <p>3–5 pages, SEO setup, photo gallery</p>
+            </div>
+            <div class="price-tier featured-tier">
+              <h5>Custom Build</h5>
+              <span class="price">R9,000+</span>
+              <p>6+ pages, custom features, CMS included</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card" data-service="redesign">
+        <div class="service-header">
+          <div class="service-num-wrap">
+            <span class="service-number">02</span>
+          </div>
+          <div class="service-title-wrap">
+            <i class="fas fa-sync-alt service-icon"></i>
+            <h3>Website Revamps</h3>
+          </div>
+          <span class="service-arrow"><i class="fas fa-plus"></i></span>
+        </div>
+        <p class="service-desc">Give your existing website a fresh, modern look and make it truly mobile-ready.</p>
+        <div class="service-pricing">
+          <div class="pricing-grid">
+            <div class="price-tier">
+              <h5>Basic Refresh</h5>
+              <span class="price">R3,000 – R5,000</span>
+              <p>Updated design, mobile responsiveness</p>
+            </div>
+            <div class="price-tier featured-tier">
+              <h5>Full Revamp</h5>
+              <span class="price">R6,000 – R10,000</span>
+              <p>Complete redesign, new features, restructured content</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="service-card" data-service="branding">
+        <div class="service-header">
+          <div class="service-num-wrap">
+            <span class="service-number">03</span>
+          </div>
+          <div class="service-title-wrap">
+            <i class="fas fa-palette service-icon"></i>
+            <h3>Print & Brand Design</h3>
+          </div>
+          <span class="service-arrow"><i class="fas fa-plus"></i></span>
+        </div>
+        <p class="service-desc">Eye-catching designs for your business materials and marketing campaigns.</p>
+        <div class="service-pricing">
+          <div class="pricing-grid">
+            <div class="price-tier">
+              <h5>Business Cards</h5>
+              <span class="price">R300</span>
+              <p>Professional design, print-ready files</p>
+            </div>
+            <div class="price-tier">
+              <h5>Flyers & Price Lists</h5>
+              <span class="price">R500</span>
+              <p>Custom design matched to your brand</p>
+            </div>
+            <div class="price-tier featured-tier">
+              <h5>Marketing Package</h5>
+              <span class="price">R2,500</span>
+              <p>Cards, flyers, social media templates</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact-container">
+      <div class="contact-header">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-heading">Let's Work Together</h2>
+        <p>Have a project in mind? Fill in the form and I'll get back to you within 24 hours.</p>
+      </div>
+
+      <div class="contact-layout">
+        <div class="contact-info-panel">
+          <div class="info-card">
+            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span class="info-label">Email</span>
+              <a href="mailto:nyathisiphephisiwe1@gmail.com" class="info-value">nyathisiphephisiwe1@gmail.com</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <span class="info-label">WhatsApp</span>
+              <a href="https://wa.me/27732517886" target="_blank" rel="noopener" class="info-value">+27 73 251 7886</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div>
+              <span class="info-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/siphephisiwe-nyathi-1045b6361" target="_blank" rel="noopener" class="info-value">Siphephisiwe Nyathi</a>
+            </div>
+          </div>
+          <div class="availability-badge">
+            <span class="availability-dot"></span>
+            Available for freelance work
+          </div>
+        </div>
+
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="from_name" placeholder="Jane Doe" required autocomplete="name">
+              <span class="field-error" id="name-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="from_email" placeholder="jane@example.com" required autocomplete="email">
+              <span class="field-error" id="email-error"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject</label>
+            <input type="text" id="contact-subject" name="subject" placeholder="Website redesign, freelance enquiry…" required>
+            <span class="field-error" id="subject-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your project or idea…" required></textarea>
+            <span class="field-error" id="message-error"></span>
+          </div>
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+            <span class="btn-loading" style="display:none;"><i class="fas fa-spinner fa-spin"></i> Sending…</span>
+          </button>
+          <div class="form-feedback success" id="formSuccess" style="display:none;">
+            <i class="fas fa-check-circle"></i>
+            <div><strong>Message sent!</strong><p>Thanks for reaching out — I'll get back to you soon.</p></div>
+          </div>
+          <div class="form-feedback error" id="formError" style="display:none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <div><strong>Something went wrong.</strong><p>Please try again or email me directly.</p></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">SN<span class="logo-dot">.</span></div>
+      <p>&copy; 2025 Siphephisiwe Nyathi &nbsp;—&nbsp; All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/Siphephisiwe-coder" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/siphephisiwe-nyathi-1045b6361" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/artisanwebwork/?hl=en" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61583118917343" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</body>
+</html>
